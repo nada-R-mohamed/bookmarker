@@ -9,10 +9,77 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style.css" />
     <title>BookMarker</title>
   </head>
   <body>
-   
+    <div class="container p-5">
+      <div class="text-center mb-4">
+        <h1>BookMarker</h1>
+        <p class="lead">Easily bookmark your favorite sites</p>
+      </div>
+
+      <!-- Form Card -->
+      <div class="card shadow-sm mb-5">
+        <div class="card-body">
+          <h2 class="card-title text-center">Add a New Bookmark</h2>
+          <form id="bookmarkForm" class="mt-4">
+            <div class="mb-3 row justify-content-center">
+              <div class="col-md-8">
+                <label for="name" class="form-label fw-bold">Site Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Enter site name"
+                />
+              </div>
+            </div>
+            <div class="mb-3 row justify-content-center">
+              <div class="col-md-8">
+                <label for="url" class="form-label fw-bold">Site URL</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="url"
+                  placeholder="Enter site URL"
+                />
+                <div class="text-danger" id="validationMessage"></div>
+              </div>
+            </div>
+            <div class="text-center">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="addBtn"
+                disabled
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bookmarks Table -->
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h2 class="card-title text-center">Your Bookmarks</h2>
+          <table class="table table-striped table-hover mt-4">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Site Name</th>
+                <th scope="col">Site URL</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Bookmarks will be dynamically added here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
